@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graviti</title>
+    <link rel="stylesheet" href="./index.css">
+
+    <script src="https://kit.fontawesome.com/c2ad539843.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/fd1a296e6c.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- main component -->
+    <section id="container">
+
+        <!-- navbar -->
+        <nav id="navbar">
+            <div id="nav-logo"><img id="logo" src="./assets/Graviti Logo 1.png" alt="" srcset=""></div>
+        </nav>
+
+        <div id="small-heading"><span>Let's calculate <span style="font-weight: 600;">distance</span> from Google
+                maps</span></div>
+
+        <!-- display section -->
+        <div id="div-grid">
+            <div id="card1" class="card">
+                <div id="card1-prop">
+                    <form action="">
+                        <div id="inputs">
+                            <div class="input-divs">
+                                <label for="">Origin</label>
+                                <div class="logo-for-inputs">
+                                    <!-- Rather using font awesome logos, i prefere to do it like this -->
+                                    <span id="input-logo-origin"></span>
+                                    <input id="origin" type="text" placeholder="Origin">
+                                </div>
+
+                            </div>
+
+                            <div class="input-divs">
+                                <label for="">Stop</label>
+                                <div class="logo-for-inputs">
+                                    <span id="input-logo-stop"></span>
+                                    <input type="text" name="" id="waypoint" placeholder="Waypoint">
+                                </div>
+                                <div id="add-another"><span><i class="fa-sharp fa-solid fa-circle-plus"></i></span> Add
+                                    Another Stop</div>
+                            </div>
+
+
+                            <div class="input-divs">
+                                <label for="">Destination</label>
+                                <div class="logo-for-inputs">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                    <input type="text" name="" id="dest" placeholder="Destination">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="btn-div">
+                            <!-- extra mode feature -->
+                            <span id="modes-area">
+                                <label class="modes-area" for="mode">Choose a Mode:</label>
+
+                                <select class="modes-area" name="" id="modes">
+                                    <option value="DRIVING">DRIVING</option>
+                                    <option value="WALKING">WALKING</option>
+                                    <option value="TRANSIT">TRANSIT</option>
+                                    <option value="BICYCLING">BICYCLING</option>
+
+                                </select>
+                            </span>
+
+                            <span id="btn">Calculate</span>
+                        </div>
+
+                    </form>
+
+                    <div id="result-section">
+                        <div id="result-area">
+                            <div id="result" class="shape">
+                                <div>Distance</div>
+                                <div id="result-parameter">_ _ _ _ <span id="kms">kms</span></div>
+                            </div>
+
+                            <!-- ETA feature -->
+                            <div id="result2" class="shape">
+                                <div id="est-time-txt">Estimated Time</div>
+                                <div id="result-parameter2">_ _ _ _
+                                </div>
+                            </div>
+
+                            <div class="shape" id="Inside_auto_layout">
+                                <div>The distance between <span id="originName">_ _ _</span> and <span
+                                        id="destName">_ _ _</span> via
+                                    the seleted route is <span id="distValue2">_ _ _ kms.</span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- map -->
+            <div id="map" class="card"></div>
+        </div>
+
+    </section>
+
+
+
+    <script src="./index.js"></script>
+    <!-- API LiNK -->
+    <script async
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAolXVBph__8LXk-JukgnxDUI4LPDQAsxQ&callback=initMap">
+        </script>
+</body>
+
+</html>
