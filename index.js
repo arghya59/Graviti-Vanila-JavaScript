@@ -1,5 +1,7 @@
 //For Graviti Internship Assignment by Arghya Banerjee
 
+
+
 // Inin map from google maps
 function initMap() {
     var directionsService = new google.maps.DirectionsService
