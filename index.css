@@ -375,11 +375,12 @@
 
      form {
          width: 100vw;
-         min-height: 50%;
+         min-height: 65%;
          display: flex;
          flex-direction: column;
          justify-content: space-between;
          align-items: center;
+         position: sticky !important;
      }
 
      #inputs {
@@ -414,6 +415,10 @@
 
      }
 
+     #anotherWaypoint{
+        height: auto !important;
+     }
+
 
 
      #input-logo-origin {
@@ -430,6 +435,7 @@
          background-color: #ffffff;
          border: 6px solid black;
          border-radius: 50%;
+         position: sticky;
      }
 
      #add-another {
@@ -438,7 +444,13 @@
          line-height: 18px;
          font-family: 'Rubik', sans-serif;
          margin-top: 10px;
+         cursor: pointer;
      }
+
+     #Waypoints-field {
+        width: 280px;
+    }
+   
 
      .logo-for-inputs>i {
          font-size: 20px;
@@ -476,7 +488,7 @@
          justify-content: center;
          align-items: center;
          width: 100vw;
-         height: 300px;
+         height: auto;
          margin-top: 30px;
 
      }
@@ -499,7 +511,7 @@
      }
 
      .shape {
-         height: 40%;
+         height: 75px;
          border-radius: 8px;
      }
 
@@ -528,7 +540,7 @@
      }
 
      #result-parameter2 {
-         width: 50% !important;
+         width: 90%;
          text-align: right;
          font-size: 18px;
          color: #0079FF;
@@ -536,7 +548,7 @@
      }
 
      .specialCase {
-         font-size: 10px !important;
+         font-size: 12px !important;
      }
 
      #Inside_auto_layout {
@@ -549,7 +561,6 @@
          font-size: 12px;
          line-height: 14.4px;
          width: 90%;
-         height: 28px;
          color: #1E2A32;
          font-weight: 400;
      }
