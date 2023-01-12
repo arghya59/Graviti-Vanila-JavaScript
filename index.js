@@ -4,8 +4,19 @@
 var count = 1
 function addWaypoint() {
     let WaypointArea = document.getElementById('Waypoints-field')
-    WaypointArea.insertAdjacentHTML("beforeend", `<input type="text" class="user_Input validator" name="" placeholder="Waypoint ${count + 1}" required>`)
+    WaypointArea.insertAdjacentHTML("beforeend", `<input type="text" class="user_Input2 validator" name="" placeholder="Waypoint ${count + 1}" required>`)
     count++
+    //Auto complete For Add another...
+    var inputAdd = document.getElementsByClassName('user_Input2')
+    //console.log("Input : " + inputAdd[0].id)
+    for (var i = 0; i < inputAdd.length; i++) {
+        let autocomplete = new google.maps.places.Autocomplete(inputAdd[i], {
+            types: ['geocode']
+        })
+        autocomplete.addListener('place_changed', function () {
+            var nearPlace = autocomplete.getPlace()
+        })
+    }
 
 }
 
@@ -29,30 +40,34 @@ function initMap() {
     var originInput = document.getElementById("origin")
     var waypointInput = document.getElementById('waypoint')
     var destInput = document.getElementById('dest')
-    const autocomplete = new google.maps.places.Autocomplete(originInput, {
-        types: ['geocode']
-    })
+    var input = document.getElementsByClassName('user_Input')
+    console.log("Input : " + input[0].id)
 
-    autocomplete.addListener('place_changed', function () {
-        var nearPlace = autocomplete.getPlace()
-    })
+    for (var i = 0; i < input.length; i++) {
+        var autocomplete = new google.maps.places.Autocomplete(input[i], {
+            types: ['geocode']
+        })
+        autocomplete.addListener('place_changed', function () {
+            var nearPlace = autocomplete.getPlace()
+        })
+    }
 
-    //Auto complete function for Destination....
-    const autocompleteDest = new google.maps.places.Autocomplete(destInput, {
-        types: ['geocode']
-    })
+    // //Auto complete function for Destination....
+    // const autocompleteDest = new google.maps.places.Autocomplete(destInput, {
+    //     types: ['geocode']
+    // })
 
-    autocompleteDest.addListener('place_changed', function () {
-        var nearPlace = autocomplete.getPlace()
-    })
-    //Auto complete function for Waypoint....
-    const autocompleteWP = new google.maps.places.Autocomplete(waypointInput, {
-        types: ['geocode']
-    })
+    // autocompleteDest.addListener('place_changed', function () {
+    //     var nearPlace = autocomplete.getPlace()
+    // })
+    // //Auto complete function for Waypoint....
+    // const autocompleteWP = new google.maps.places.Autocomplete(waypointInput, {
+    //     types: ['geocode']
+    // })
 
-    autocompleteWP.addListener('place_changed', function () {
-        var nearPlace = autocomplete.getPlace()
-    })
+    // autocompleteWP.addListener('place_changed', function () {
+    //     var nearPlace = autocomplete.getPlace()
+    // })
 }
 
 //Call the functions
